@@ -38,11 +38,11 @@ for (let numberGenerator = 1; numberGenerator <= 100; numberGenerator++) { // Ci
     box.classList.add("box"); // aggiunta classe box a tutti i div dentro il container
 
     if (output === 'Fizz') {
-        box.classList.add('fizz');
+        box.classList.add('fizz'); // Aggiungi la classe fizz al box
     } else if (output === 'Buzz') {
-        box.classList.add('buzz');
+        box.classList.add('buzz'); // Aggiungi la classe buzz al box
     } else if (output === 'FizzBuzz') {
-        box.classList.add('fizzbuzz');
+        box.classList.add('fizzbuzz'); // Aggiungi la classe fizzbuzz al box
     } else {
         box.classList.add('box');
     }
