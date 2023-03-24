@@ -12,3 +12,50 @@ body {
     background-color: #4d456a;
     color: #fafafa;
 }
+
+.container {
+    max-width: 80%;
+    margin: 1em auto;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container div{
+    aspect-ratio: 1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #3997ce;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.container .fizz{
+    background: rgb(65, 225, 169);
+}
+
+.container .buzz{
+    background: rgb(225, 209, 65);
+}
+
+.container .fizzbuzz{
+    background: rgb(225, 65, 65);
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 900px){
+    .container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 470px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}

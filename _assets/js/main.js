@@ -17,6 +17,34 @@ BONUS 2: Applica stili differenti agli elementi aggiunti al DOM nel BONUS 1, a s
 
 */
 
-for (let numberGenerator = 1; numberGenerator <= 100; numberGenerator++){
-    console.log(numberGenerator)
+// container dove verranno inseriti gli elementi
+const container = document.querySelector(".container");
+
+for (let numberGenerator = 1; numberGenerator <= 100; numberGenerator++) { // generazione di un numero da 1 a 100
+
+    let output = "";
+
+    if (output === "") { // se la variabile output è vuota
+        output += numberGenerator; // inseriamo il numero stesso
+
+    } if (numberGenerator % 3 == 0) { // se il numero è divisibile per 3
+        output = 'Fizz'; // aggiungiamo "Fizz"
+
+    } if (numberGenerator % 5 === 0) { // se il numero è divisibile per 5
+        output = 'Buzz'; // aggiungiamo "Buzz"
+
+    } if (numberGenerator % 3 === 0 && numberGenerator % 5 === 0) { // se il numero è divisibile sia per 3 che per 5
+        output = 'FizzBuzz'; // sostituiamo con "FizzBuzz"
+    }
+
+    const newElement = document.createElement('div'); // div che va dentro al container
+
+    if (typeof output === 'string') {
+        newElement.classList.add(output.toLowerCase()); // per Fizz, Buzz o FizzBuzz aggiungiamo una classe corrispondente
+    }
+
+    newElement.innerText = output;
+
+    container.append(newElement);
+
 }
