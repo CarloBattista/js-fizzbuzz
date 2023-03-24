@@ -17,34 +17,35 @@ BONUS 2: Applica stili differenti agli elementi aggiunti al DOM nel BONUS 1, a s
 
 */
 
-// container dove verranno inseriti gli elementi
-const container = document.querySelector(".container");
+const container = document.querySelector(".container"); // Selezione del Container nel DOM
 
-for (let numberGenerator = 1; numberGenerator <= 100; numberGenerator++) { // generazione di un numero da 1 a 100
+for (let numberGenerator = 1; numberGenerator <= 100; numberGenerator++) { // Ciclo per generare dei numeri da 1 a 100
 
     let output = "";
 
-    if (output === "") { // se la variabile output è vuota
+    if (output == "") { // se la variabile output è vuota
         output += numberGenerator; // inseriamo il numero stesso
-
     } if (numberGenerator % 3 == 0) { // se il numero è divisibile per 3
         output = 'Fizz'; // aggiungiamo "Fizz"
-
-    } if (numberGenerator % 5 === 0) { // se il numero è divisibile per 5
+    } if (numberGenerator % 5 == 0) { // se il numero è divisibile per 5
         output = 'Buzz'; // aggiungiamo "Buzz"
-
-    } if (numberGenerator % 3 === 0 && numberGenerator % 5 === 0) { // se il numero è divisibile sia per 3 che per 5
+    } if (numberGenerator % 3 == 0 && numberGenerator % 5 == 0) { // se il numero è divisibile sia per 3 che per 5
         output = 'FizzBuzz'; // sostituiamo con "FizzBuzz"
     }
 
-    const newElement = document.createElement('div'); // div che va dentro al container
+    const box = document.createElement('div'); // div che va dentro al container
+    box.textContent = output; // output che va dentro i box
+    box.classList.add("box"); // aggiunta classe box a tutti i div dentro il container
 
-    if (typeof output === 'string') {
-        newElement.classList.add(output.toLowerCase()); // per Fizz, Buzz o FizzBuzz aggiungiamo una classe corrispondente
+    if (output === 'Fizz') {
+        box.classList.add('fizz');
+    } else if (output === 'Buzz') {
+        box.classList.add('buzz');
+    } else if (output === 'FizzBuzz') {
+        box.classList.add('fizzbuzz');
+    } else {
+        box.classList.add('box');
     }
 
-    newElement.innerText = output;
-
-    container.append(newElement);
-
+    container.append(box);
 }
